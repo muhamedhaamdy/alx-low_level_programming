@@ -9,20 +9,18 @@
 */
 int main(void)
 {
-	int i = '0';
-
-	for (; i < '9'; i++)
+	for (int i = 0; i < 100; i++)
 	{
-		for (int j = i + 1; j <= '9'; j++)
-		{
-			putchar(i);
-			putchar(j);
-			if (i == '8' && j == '9')
-				goto finish;
-			putchar(',');
-			putchar(' ');
-		}
+		int a = i % 10, b = i / 10;
+
+		if (b >= a)
+			continue;
+		putchar(b + '0');
+		putchar(a + '0');
+		if (i == 89)
+			break;
+		putchar(',');
+		putchar(' ');
 	}
-finish:
 	return (0);
 }
