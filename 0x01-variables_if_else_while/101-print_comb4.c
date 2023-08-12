@@ -13,7 +13,7 @@ int main(void)
 
 	while (i < 1000)
 	{
-		int a = i % 10, b = (i % 100 - a)/10 , c = i / 100 ;
+		int a = i % 10, b = (i % 100 - a) / 10, c = i / 100;
 
 		if (c < b && c < a && b < a)
 		{
