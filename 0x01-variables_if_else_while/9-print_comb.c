@@ -13,12 +13,8 @@ int main(void)
 	while (hamdy<= '9')
 	{
 		putchar(hamdy);
-		if(hamdy == '9')
-		{
-			putchar('$');
-			hamdy++;
+		if (hamdy == '9')
 			break;
-		}
 		putchar(',');
 		putchar(' ');
 		hamdy++;
