@@ -10,7 +10,8 @@
 int main(void)
 {
 	int hamdy = '0';
-	while (hamdy<= '9')
+
+	while (hamdy <= '9')
 	{
 		putchar(hamdy);
 		if (hamdy == '9')
