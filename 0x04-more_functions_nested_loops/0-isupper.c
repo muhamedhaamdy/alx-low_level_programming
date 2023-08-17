@@ -4,23 +4,14 @@
 /**
  * main - check the code.
  *
- * Description: program using builtin bunction isupper
+ * Description: function  using builtin bunction isupper
  *
  * Return: Always 0.
  */
-int main(void)
+int _isupper(char ch)
 {
-char c;
-
-c = 'A';
-if (isupper(c))
-	printf("%c: 1\n", c);
-else
-	printf("%c: 0\n", c);
-c = 'a';
-if (isupper(c))
-	printf("%c: 1\n", c);
-else
-	printf("%c: 0\n", c);
-return (0);
+	if (isupper(ch))
+		return (1);
+	else
+		return (0);
 }
