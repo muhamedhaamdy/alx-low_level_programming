@@ -7,9 +7,9 @@
  *
  * Return: Always 0.
  */
-int _isupper(char ch)
+int _isupper(int c)
 {
-	if (isupper(ch))
+	if (c >= 'A' && c <= 'z')
 		return (1);
 	else
 		return (0);
