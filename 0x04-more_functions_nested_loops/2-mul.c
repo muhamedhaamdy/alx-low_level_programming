@@ -2,7 +2,7 @@
 
 /**
  * main - check the code.
- *
+ * mul - function that multipliestwo numbers
  * @a: first num
  * @b: second num
  * Description: function  using builtin bunction isupper
