@@ -3,6 +3,8 @@
 /**
  * main - check the code.
  *
+ * @a: first num
+ * @b: second num
  * Description: function  using builtin bunction isupper
  *
  * Return: Always 0.
