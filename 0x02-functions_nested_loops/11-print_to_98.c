@@ -23,7 +23,7 @@ void print(int n)
 void print_to_98(int n)
 {
 	do {
-		pirnt(n);
+		print(n);
 		_putchar(',');
 		_putchar(' ');
 		if (n > 98)
