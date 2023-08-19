@@ -1,4 +1,4 @@
-#include<main.h>
+#include "main.h"
 
 /**
  * main - main function
@@ -10,9 +10,10 @@
 int main(void)
 {
 	char str[8] = "_putcahr";
+	int i;
 
-	for (int i = 0; i < 8; i++)
+	for (i = 0; i < 8; i++)
 		_putchar(str[i]);
-	_putcahr('\n');
+	_putchar('\n');
 	return (0);
 }
