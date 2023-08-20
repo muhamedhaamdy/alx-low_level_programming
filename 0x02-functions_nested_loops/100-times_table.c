@@ -15,13 +15,19 @@ void print_times_table(int n)
 		{
 			int mul = i * j;
 
-			if (mul  < 10)
-				_putchar(i * j + '0');
-			else
+			if (mul  >= 100)
+			{
+				_putchar(mul / 100 + '0');
+				_putchar((mul / 10) % 10  + '0');
+				_putchar(mul % 10 + '0');
+			}
+			else if (mul >= 10)
 			{
 				_putchar(mul / 10 + '0');
 				_putchar(mul % 10 + '0');
 			}
+			else
+				_putchar(mul + '0');
 			if (j == n)
 				_putchar('\n');
 			else
