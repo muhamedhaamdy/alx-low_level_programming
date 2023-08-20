@@ -2,9 +2,9 @@
 
 /**
  * print_to_98- print from n to 98
- * print - all of this is shit
+ * print - recursive function that prins the full number
  *
- * print Description : print the number
+ * Description : print the number
  *
  * @n : strarting point
  * @k : pass to print function
@@ -24,15 +24,17 @@ void print(int k)
 }
 void print_to_98(int n)
 {
-	do {
+	while (n != 98)
+	{
 		print(n);
 		if (n > 98)
 			n--;
 		else if (n <  98)
 			n++;
-		else
-			break;
 		_putchar(',');
 		_putchar(' ');
-	} while (n != 98);
+	}
+	_putchar('9');
+	_putchar('8');
+	_putchar('\n');
 }
