@@ -27,9 +27,9 @@ void print_times_table(int n)
 			else
 			{
 				_putchar(',');
-				if ((j + 1) * i <= 100)
+				if ((j + 1) * i >= 100)
 					_putchar(' ');
-				else if ((j + 1) * i <= 10)
+				else if ((j + 1) * i >= 10)
 				{
 					_putchar(' ');
 					_putchar(' ');
