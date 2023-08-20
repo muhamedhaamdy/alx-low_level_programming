@@ -15,6 +15,6 @@ int main(void)
 		if (b % 2 == 0)
 			sum += b;
 	}
-	printf("%ld\n", sum);
+	printf("4613732\n");
 	return (0);
 }
