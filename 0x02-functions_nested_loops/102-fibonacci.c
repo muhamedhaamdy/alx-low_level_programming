@@ -14,7 +14,10 @@ int main(void)
 		a = b;
 		b = tmp;
 		if (i == 47)
+		{
 			printf("%ld", b);
+			break;
+		}
 		printf("%ld, ", b);
 	}
 	putchar('\n');
