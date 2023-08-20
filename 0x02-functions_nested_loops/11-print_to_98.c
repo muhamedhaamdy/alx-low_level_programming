@@ -12,7 +12,7 @@ void cout(int n)
 		n *= -1;
 	}
 	if (n / 10)
-		print(n / 10);
+		cout(n / 10);
 	_putchar(n % 10 + '0');
 }
 /**
