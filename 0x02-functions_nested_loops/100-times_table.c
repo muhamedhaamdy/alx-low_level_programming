@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * times_table - pirnt time table of 9
+ * print_times_table - pirnt time table of 9
  *
  * @n: the maximum value for the multiplication table
 */
-void times_table(int n)
+void print_times_table(int n)
 {
 	int i = 0, j;
 
