@@ -3,7 +3,7 @@
 /**
  * print_times_table - pirnt time table of 9
  *
- * Return: always return  0
+ * @n: the maximum value for the multiplication table
 */
 void print_times_table(int n)
 {
@@ -29,12 +29,12 @@ void print_times_table(int n)
 				_putchar(',');
 				if ((j + 1) * i <= 100)
 					_putchar(' ');
-				else if((j +1) * i <=10)
+				else if ((j + 1) * i <= 10)
 				{
 					_putchar(' ');
 					_putchar(' ');
 				}
-				else 
+				else
 				{
 					_putchar(' ');
 					_putchar(' ');
