@@ -1,4 +1,4 @@
-include "main.c"
+include "main.h"
 
 /**
  * reset_to_98 - function that reset the value to 98
