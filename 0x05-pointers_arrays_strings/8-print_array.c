@@ -23,7 +23,7 @@ void cout(int n)
  */
 void print_array(int *a, int n)
 {
-	int i;
+	int* i;
 
 	for (i = a; i < a + n; i++)
 	{
