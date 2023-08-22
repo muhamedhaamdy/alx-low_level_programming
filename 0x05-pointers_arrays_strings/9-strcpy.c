@@ -26,7 +26,7 @@ int _strlen(char *s)
  *
  * Return: pointer to the firest string
  */
-char *_strcpy(char *dest, cihar *src)
+char *_strcpy(char *dest, char *src)
 {
 	int len, i;
 
