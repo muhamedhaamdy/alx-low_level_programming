@@ -25,7 +25,7 @@ int _strlen(char *s)
  */
 void puts_half(char *str)
 {
-	int len = _strlen(str) - 1, half;
+	int len = _strlen(str), half;
 	half = len / 2;
 
 	while (*(str + half) != '\0')
