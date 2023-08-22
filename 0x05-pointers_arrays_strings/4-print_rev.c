@@ -1,15 +1,15 @@
 #include "main.h"
 
 /**
- * _puts - function prints the full stirng
+ * print_rev - function prints the full stirng
  *
- * @str : the string
+ * @s : the string
  */
-void _puts(char *str)
+void print_rev(char *s)
 {
-	int len = _strlen(str);
+	int len = _strlen(s);
 
 	while (len--)
-		_putchar(*(str + len));
+		_putchar(*(s + len));
 	_putchar('\n');
 }
