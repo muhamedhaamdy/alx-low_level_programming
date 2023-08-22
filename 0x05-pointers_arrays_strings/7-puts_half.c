@@ -25,10 +25,13 @@ int _strlen(char *s)
  */
 void puts_half(char *str)
 {
-	int len = _strlen(s) - 1;
-	(len % 2 == 0) ? int half = len / 2 : int half = len / 2 + 1;
+	int len = _strlen(str) - 1, half;
 	char ch = *(str + half);
 
+	if (len % 2 == 0)
+		half = len / 2;
+	else
+		half = len / 2 + 1;
 	while (ch != '\0')
 	{
 		_putchar(ch);
