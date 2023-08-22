@@ -1,11 +1,13 @@
 #include "main.h"
 
 /**
- * reset_to_98 - function that reset the value to 98
+ * swap_int - function that swap two numbers
  *
- * @n : a pionter that should be reseted
+ * @a : first number
+ * @b : second number
  */
-void reset_to_98(int *n)
+void swap_int(int *a, int *b)
 {
 	*n = 98;
+
 }
