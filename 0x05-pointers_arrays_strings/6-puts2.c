@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * _puts2 - function prints the full stirng
+ * puts2 - function prints the full stirng
  *
  * @str : the string
  */
-void _puts2(char *str)
+void puts2(char *str)
 {
 	char i = *str;
 	int c = 0;
