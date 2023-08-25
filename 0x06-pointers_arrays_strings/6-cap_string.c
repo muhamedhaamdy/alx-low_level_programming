@@ -1,34 +1,34 @@
 #include "main.h"
 /**
- * not_alpha - determine if it is alphabit or not
- * @ch : the character
- * Return: 1 or 0
-*/
-int not_alpha(char *ch)
-{
-	int s[] = {',', ';', '.', '!','?', '"', '(', ')', '{', '}', ' ', '\n', '\t'};
-	int i;
-
-	for (i = 0; s[i] <= 12; i++)
-	{
-		if (*ch == s[i])
-			return (1);
-	}
-		return (0);
-}
-/**
  * cap_string - function that turns all lowercase chars to uppercase
  * @ch : string
  * Return: return string after editing.
 */
-char *cap_string(char *ch)
+char *cap_string(char *s)
 {
-	int i = 1;
+	int i, j;
+	int a[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
 
-	for (; ch[i] != '\0'; i++)
+	i = 0;
+	while (*(s + i) != '\0')
 	{
-		if (not_alpha(ch[i - 1])  && (ch[i] >= 'a' && ch[i] <= 'z'))
-			ch[i] -= 32;
+		if (*(s + i) >= 'a' && *(s + i) <= 'z')
+		{
+			if (i == 0)
+			{
+				*(s + i) = *(s + i) - 32;
+			}
+			else
+			{
+				for (j = 0; j <= 12; j++)
+				{
+					if (a[j] == *(s + i - 1))
+					{
+						*(s + i) = *(s + i) - 32;
+					}
+				}
+			}
+		}
+	i++;
 	}
-	return (ch);
-}
+	return (s);
