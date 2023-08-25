@@ -6,7 +6,7 @@
 */
 int is_alpha(char ch)
 {
-	if (ch == ',' || ch == ';' || ch == '.' || ch == '!' || ch == '?' || ch == '"' || '(' || ch == ')' || ch == '{' || ch == '}' || ch == ' ' || ch == '\n' || ch == '\t')
+	if (ch == ',' || ch == ';' || ch == '.' || ch == '!' || ch == '?' || ch == '"' ||ch == '(' || ch == ')' || ch == '{' || ch == '}' || ch == ' ' || ch == '\n' || ch == '\t')
 		return (0);
 	else
 		return (1);
