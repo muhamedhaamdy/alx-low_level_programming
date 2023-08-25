@@ -2,7 +2,7 @@
 /**
  * string_toupper - function that turns all lowercase chars to uppercase
  * @ch : string
- * return: return string after editing
+ * Return: return string after editing.
 */
 char *string_toupper(char *ch)
 {
