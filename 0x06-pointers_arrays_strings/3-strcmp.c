@@ -17,7 +17,7 @@ int _strcmp(char *s1, char *s2)
 	if (sum1 == sum2)
 		return (0);
 	else if (sum1 > sum2)
-		return (15);
+		return (sum1 - sum2);
 	else
-		return (-15);
+		return (sum1 - sum2);
 }
