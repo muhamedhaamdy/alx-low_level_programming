@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * isalpha - determine if it is alphabit or not
+ * is_alpha - determine if it is alphabit or not
  * @ch : the character
  * Return: 1 or 0
 */
-bool isalpha(char ch)
+int is_alpha(char ch)
 {
 	if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))
 		return (1);
@@ -22,7 +22,7 @@ char *cap_string(char *ch)
 
 	for (; ch[i] != '\0'; i++)
 	{
-		if (!isalpha(ch[-1])  && (ch[i] >= 'a' && ch[i] <= 'z'))
+		if (!is_alpha(ch[-1])  && (ch[i] >= 'a' && ch[i] <= 'z'))
 			ch[i] -= 32;
 	}
 	return (ch);
