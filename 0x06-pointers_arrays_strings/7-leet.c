@@ -1,35 +1,26 @@
 #include "main.h"
 /**
- * cap_string - function that turns all lowercase chars to uppercase
+ * leet - function that turns all lowercase chars to uppercase
  * @s: string
  * Return: return string after editing.
 */
-char *cap_string(char *s)
+char *leet(char *s)
 {
-	int i, j;
-	int a[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
+	char a[] = "aeotlAEOTL";
+	char n[] = "4307143071";
+	int i = 0;
+	int j;
 
-	i = 0;
 	while (*(s + i) != '\0')
 	{
-		if (*(s + i) >= 'a' && *(s + i) <= 'z')
+		for (j = 0; j <= 9; j++)
 		{
-			if (i == 0)
+			if (*(s + i) == a[j])
 			{
-				*(s + i) = *(s + i) - 32;
-			}
-			else
-			{
-				for (j = 0; j <= 12; j++)
-				{
-					if (a[j] == *(s + i - 1))
-					{
-						*(s + i) = *(s + i) - 32;
-					}
-				}
+				*(s + i) = n[j];
 			}
 		}
-	i++;
+		i++;
 	}
 	return (s);
 }
