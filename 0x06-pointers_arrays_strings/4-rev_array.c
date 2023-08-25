@@ -1,4 +1,19 @@
-#include "main.h"
+#include "main.h"i
+/**
+ * cout- recursive function that prins the full number
+ * @n : strarting point
+ */
+void cout(int n)
+{
+	if (n < 0)
+	{
+		_putchar('-');
+		n *= -1;
+	}
+	if (n / 10)
+		cout(n / 10);
+	_putchar(n % 10 + '0');
+}
 /**
  * reverse_array - function that prints the array in reverse way
  *
@@ -11,9 +26,12 @@ void reverse_array(int *a, int n)
 
 	for (i = n - 1; i >= 0; i++)
 	{
-		printf("%d", a[i]);
+		cout(a[i]);
 		if (i > 0)
-			printf(", ");
+		{
+			_putchar(',');
+			_putchar(' ');
+		}
 	}
-	putchar('\n');
+	printf("\n");
 }
