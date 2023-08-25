@@ -1,32 +1,35 @@
 #include "main.h"
 /**
  * cap_string - function that turns all lowercase chars to uppercase
- * @entry: string
+ * @s: string
  * Return: return string after editing.
 */
-char *cap_string(char *entry)
+char *cap_string(char *s)
 {
-	int conversion, index, count;
+	int i, j;
+	int a[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
 
-	char chars[] = {' ', ',', ';', '.', '!',
-			 '?', '"', '(', ')', '{', '}',  '\t', '\n', '\0'};
-	conversion = 32;
-
-	for (index = 0; entry[index] != '\0'; index++)
+	i = 0;
+	while (*(s + i) != '\0')
 	{
-		if (entry[index] >= 'index' && entry[index] <= 'z')
+		if (*(s + i) >= 'a' && *(s + i) <= 'z')
 		{
-			entry[index] =  entry[index] - conversion;
-		}
-		conversion = 0;
-		for (count = 0; chars[count] != '\0'; count++)
-		{
-			if (chars[count] == entry[index])
+			if (i == 0)
 			{
-				conversion = 32;
-				break;
+				*(s + i) = *(s + i) - 32;
+			}
+			else
+			{
+				for (j = 0; j <= 12; j++)
+				{
+					if (a[j] == *(s + i - 1))
+					{
+						*(s + i) = *(s + i) - 32;
+					}
+				}
 			}
 		}
+	i++;
 	}
-	return (entry);
+	return (s);
 }
