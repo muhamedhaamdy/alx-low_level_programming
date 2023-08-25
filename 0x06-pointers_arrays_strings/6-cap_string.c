@@ -6,12 +6,12 @@
 */
 int not_alpha(char *ch)
 {
-	char *s = ",;.!?"(){} \n\t";
+	int s[] = {',', ';', '.', '!','?', '"', '(', ')', '{', '}', ' ', '\n', '\t'};
 	int i;
 
-	for (i = 0; *(s + i) != '\0'; i++)
+	for (i = 0; s[i] <= 12; i++)
 	{
-		if (*ch == *(s + i))
+		if (*ch == s[i])
 			return (1);
 	}
 		return (0);
@@ -27,7 +27,7 @@ char *cap_string(char *ch)
 
 	for (; ch[i] != '\0'; i++)
 	{
-		if (not_alpha(*(ch +i - 1))  && (ch[i] >= 'a' && ch[i] <= 'z'))
+		if (not_alpha(ch[i - 1])  && (ch[i] >= 'a' && ch[i] <= 'z'))
 			ch[i] -= 32;
 	}
 	return (ch);
