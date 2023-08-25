@@ -1,10 +1,12 @@
 #include "main.h"
 
 /**
- * swap_int - function that swap two numbers
+ * _strcat - function that concatenate two strings
  *
- * @a : first number
- * @b : second number
+ * @dest : first string
+ * @src : second string
+ *
+ * Retrun: return a pointer to the first string after concatenation
  */
 char *_strcat(char *dest, char *src)
 {
