@@ -6,10 +6,10 @@
 */
 int is_alpha(char ch)
 {
-	if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))
-		return (1);
-	else
+	if (ch == ',' || ch == ';' || ch == '.' || ch == '!' || ch == '?' || ch == '"' || '(' || ch == ')' || ch == '{' || ch == '}' || ch == ' ' || ch == '\n' || ch == '\t')
 		return (0);
+	else
+		return (1);
 }
 /**
  * cap_string - function that turns all lowercase chars to uppercase
