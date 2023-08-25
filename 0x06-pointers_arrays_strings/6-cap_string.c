@@ -22,7 +22,7 @@ char *cap_string(char *ch)
 
 	for (; ch[i] != '\0'; i++)
 	{
-		if (!is_alpha(ch[-1])  && (ch[i] >= 'a' && ch[i] <= 'z'))
+		if (!is_alpha(ch[i - 1])  && (ch[i] >= 'a' && ch[i] <= 'z'))
 			ch[i] -= 32;
 	}
 	return (ch);
