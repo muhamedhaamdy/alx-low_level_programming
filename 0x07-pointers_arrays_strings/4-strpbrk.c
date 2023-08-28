@@ -18,7 +18,7 @@ char *_strpbrk(char *s, char *accept)
 		{
 			if (s[j] == accept[i])
 			{
-				loc = *s[j];
+				loc = &s[j];
 				break;
 			}
 		}
