@@ -19,6 +19,7 @@ char *_strchr(char *s, char c)
 			loc = (s + i);
 			break;
 		}
+		i++;
 	}
 	return (loc);
 }
