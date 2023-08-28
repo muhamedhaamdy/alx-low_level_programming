@@ -30,7 +30,7 @@ char *_strstr(char *haystack, char *needle)
 	int i, j;
 	char *loc = '\0';
 
-	for (i = 0 ; needle[i] != '\0'; i++)
+	for (i = 0; needle[i] != '\0'; i++)
 	{
 		for (j = 0; haystack[j] != '\0'; j++)
 		{
