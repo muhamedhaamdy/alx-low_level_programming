@@ -38,10 +38,11 @@ char *_strstr(char *haystack, char *needle)
 
 			if (valid(tmp1, tmp2, needle, haystack))
 			{
-				loc = (needle + i);
-				break;
+				loc = (haystack + j);
+				goto out;
 			}
 		}
 	}
+out:
 	return (loc);
 }
