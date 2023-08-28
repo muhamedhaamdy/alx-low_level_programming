@@ -1,8 +1,4 @@
 #include "main.h"
-/**
- * cout - prints full number
- * @n : the number
-*/
 void cout(long n)
 {
 	long num = n;
@@ -27,12 +23,13 @@ void print_diagsums(int *a, int size)
 
 	while (i < size)
 	{
-		sum1 += a[i][i];
+		sum1 += *(a + (i * size) + i);
 		i++;
 	}
+	i--;
 	while (i >= 0)
 	{
-		sum2 += a[i][j];
+		sum2 += *(a + (i * size) + j);
 		i--;
 		j++;
 	}
@@ -40,4 +37,5 @@ void print_diagsums(int *a, int size)
 	_putchar(',');
 	_putchar(' ');
 	cout(sum2);
+	_putchar('\n');
 }
