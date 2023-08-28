@@ -1,4 +1,8 @@
 #include "main.h"
+/**
+ *cout - print the entire number
+ *@n : the number
+*/
 void cout(long n)
 {
 	long num = n;
