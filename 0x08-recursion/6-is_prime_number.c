@@ -28,6 +28,7 @@ int _sqrt_recursion(int n)
  * is_prime_help - help the first function
  * @n : first number
  * @i : second number
+ * @r : third number
  * Return: 1 or 0
 */
 int is_prime_help(int n, int i, int r)
