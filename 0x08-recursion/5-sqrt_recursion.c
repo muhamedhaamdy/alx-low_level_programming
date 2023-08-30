@@ -5,7 +5,7 @@
  * @i : the second number
  * Return: the square root if exist
 */
-unsigned long _sqrt_help(unsigned long n, unsigned long i)
+long _sqrt_help(long n, long i)
 {
 	if (i * i == n)
 		return (i);
