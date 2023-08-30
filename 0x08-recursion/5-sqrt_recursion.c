@@ -7,7 +7,7 @@
 */
 int _sqrt_help(int n, int i)
 {
-	if (()i * i == n)
+	if (i * i == n)
 		return (i);
 	else if (i == 0)
 		return (-1);
