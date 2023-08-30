@@ -32,7 +32,7 @@ int _sqrt_recursion(int n)
 */
 int is_prime_help(int n, int i, int r)
 {
-	if (n == r)
+	if (i == r)
 		return (1);
 	if (n % i == 0)
 		return (0);
