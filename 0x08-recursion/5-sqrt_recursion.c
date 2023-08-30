@@ -5,9 +5,9 @@
  * @i : the second number
  * Return: the square root if exist
 */
-long _sqrt_help(long n, long i)
+int _sqrt_help(int n, int i)
 {
-	if (i * i == n)
+	if (()i * i == n)
 		return (i);
 	else if (i == 0)
 		return (-1);
@@ -22,5 +22,5 @@ int _sqrt_recursion(int n)
 {
 	if (n < 0)
 		return (-1);
-	return (_sqrt_help(n, n));
+	return (_sqrt_help(n, n / 2));
 }
