@@ -5,7 +5,7 @@
  * @i : the second number
  * Return: the square root if exist
 */
-int _sqrt_help(int n, int i)
+int _sqrt_help(unsigned int n, unsigned int i)
 {
 	if (i * i == n)
 		return (i);
