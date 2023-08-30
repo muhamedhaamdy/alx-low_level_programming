@@ -36,7 +36,7 @@ int is_prime_help(int n, int i, int r)
 		return (1);
 	if (n % i == 0)
 		return (0);
-	return (is_prime_help(n, i + 1));
+	return (is_prime_help(n, i + 1, r));
 }
 /**
  * is_prime_number - calculate the power of a number
