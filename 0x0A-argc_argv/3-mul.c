@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 	int i = 0, n1 = 0, n2 = 0, negative = 0;
 
 	if (argc != 3)
-		printf("ERROR");
+		printf("ERROR\n");
 	else
 	{
 		if (argv[1][0] == '-')
