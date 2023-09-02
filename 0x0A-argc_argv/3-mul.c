@@ -8,7 +8,8 @@
  */
 int main(int argc, char *argv[])
 {
-	int i = 0, n1 = 0, n2 = 0, negative = 0;
+	int i = 0, n1 = 0, n2 = 0;
+	int negative = 0;
 
 	if (argc != 3)
 		printf("ERROR");
