@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 /**
  * main - main function
  *
@@ -8,43 +9,25 @@
  */
 int main(int argc, char *argv[])
 {
-	int i = 0, n = 0, c = 0;
+	int i = 0, n = atoi(argv[1]), c = 0;
 
 	if (argc != 2)
+	{
 		printf("Error\n");
+		return (1);
+	}
 	else
 	{
-		for (; argv[1][i] != '\0'; i++)
-		{
-			n += (argv[1][i] - '0');
-			n *= 10;
-		}
-		n /= 10;
-		while (n >= 25)
-		{
-			n -= 25;
+		for (; n >= 25; n -= 25)
 			c++;
-		}
-		while (n >= 10)
-		{
-			n -= 10;
+		for (; n >= 10; n -= 10)
 			c++;
-		}
-		while (n >= 5)
-		{
-			n -= 5;
+		for (; n >= 5; n -= 5)
 			c++;
-		}
-		while (n >= 2)
-		{
-			n -= 2;
+		for (; n >= 2; n -= 2)
 			c++;
-		}
-		while (n >= 1)
-		{
-			n--;
+		for (; n >= 1; n--)
 			c++;
-		}
 		printf("%d\n", c);
 	}
 	return (0);
