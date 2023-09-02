@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 		n2 /= 10;
 		if (negative)
 			n2 *= -1;
-	}
 	printf("%d\n", n1 * n2);
+	}
 	return (0);
 }
