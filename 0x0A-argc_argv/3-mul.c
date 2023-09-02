@@ -8,8 +8,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int i = 0, n1 = 0, n2 = 0;
-	int negative = 0;
+	int i = 0, n1 = 0, n2 = 0, negative = 0;
 
 	if (argc != 3)
 		printf("ERROR");
@@ -20,11 +19,10 @@ int main(int argc, char *argv[])
 			i = 1;
 			negative = 1;
 		}
-		while (argv[1][i] != '\0')
+		for (; argv[1][i] != '\0'; i++)
 		{
-			n1 += argv[1][i] - '0';
+			n1 += (argv[1][i] - '0');
 			n1 *= 10;
-			i++;
 		}
 		if (negative)
 		{
@@ -38,11 +36,10 @@ int main(int argc, char *argv[])
 			negative = 1;
 			i = 1;
 		}
-		while (argv[2][i] != '\0')
+		for (; argv[2][i] != '\0'; i++)
 		{
-			n2 += argv[2][i] - '0';
+			n2 += (argv[2][i] - '0');
 			n2 *= 10;
-			i++;
 		}
 		n2 /= 10;
 		if (negative)
