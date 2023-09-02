@@ -8,9 +8,9 @@
  */
 int main(int argc, char *argv[])
 {
-	int i = 1, n1 = 0, n2 = 0;
+	int i = 0, n1 = 0, n2 = 0;
 
-	if(argc != 3)
+	if (argc != 3)
 		printf("ERROR");
 	else
 	{
@@ -21,13 +21,15 @@ int main(int argc, char *argv[])
 			i++;
 		}
 		n1 /= 10;
+		i = 0;
 		while (argv[2][i] != '\0')
 		{
 			n2 += argv[2][i] - '0';
 			n2 *= 10;
 			i++;
 		}
+		n2 /= 10;
 	}
-	printf("%d %d %d\n", n1 * n2, n1 , n2);
+	printf("%d\n", n1 * n2);
 	return (0);
 }
