@@ -9,8 +9,6 @@
  */
 int main(int argc, char *argv[])
 {
-	int n = atoi(argv[1]), c = 0;
-
 	if (argc != 2)
 	{
 		printf("Error\n");
@@ -18,6 +16,8 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
+		int n = atoi(argv[1]), c = 0;
+
 		for (; n >= 25; n -= 25)
 			c++;
 		for (; n >= 10; n -= 10)
