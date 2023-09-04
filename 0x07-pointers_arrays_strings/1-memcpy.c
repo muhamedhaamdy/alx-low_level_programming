@@ -1,23 +1,26 @@
-#include "main.h"
-
+#include<stdio.h>
 /**
- * _memcpy - that copy memory with a constant byte.
+ * _print_rev_recursion - print a string in recusive way
  *
- * @dest : firs string
- * @src : seocond string
- * @n : the size
- *
- * Return: string after reblace
-*/
-char *_memcpy(char *dest, char *src, unsigned int n)
+ */
+int _strlen_recursion(char *s)
 {
-	unsigned int i;
-
-	i = 0;
-	while (i < n)
+	int i = 0;
+	if (*s == '\0')
 	{
-		dest[i] = src[i];
-		i++;
+		return (0);
 	}
-	return (dest);
+	else
+	{
+		i = _strlen_recursion(s + 1);
+		return (i + 1);
+	}
+}
+int main(void)
+{
+    int n;
+
+    n = _strlen_recursion("Corbin Coleman");
+    printf("%d\n", n);
+    return (0);
 }
