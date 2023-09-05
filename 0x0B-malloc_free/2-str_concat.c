@@ -22,17 +22,23 @@ char *str_concat(char *s1, char *s2)
 	i = 0;
 	if (arr == NULL)
 		return (NULL);
-	while (s1[i] != '\0')
+	if (s1 != NULL)
 	{
-		arr[i] = s1[i];
-		i++;
+		while (s1[i] != '\0')
+		{
+			arr[i] = s1[i];
+			i++;
+		}
 	}
 	j = 0;
-	while (s2[j] != '\0')
+	if (s2 != NULL)
 	{
-		arr[i] = s2[j];
-		i++;
-		j++;
+		while (s2[j] != '\0')
+		{
+			arr[i] = s2[j];
+			i++;
+			j++;
+		}
 	}
 	return (arr);
 }
