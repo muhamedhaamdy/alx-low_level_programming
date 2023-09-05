@@ -12,7 +12,7 @@ char *_strdup(char *str)
 	unsigned int i = 0;
 
 	do {
-		if (arr == NULL || s == NULL)
+		if (arr == NULL || str == NULL)
 			return ('\0');
 		arr[i] = str[i];
 		i++;
