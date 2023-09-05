@@ -1,25 +1,33 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * _strdup - copy a string
+ * alloc_grid - makes 2D array
  *
- * @str : the stirng
- * Return: the string
+ * @width : the width of the array
+ * @height : the height of the array
+ * Return: 2D array
  */
 int **alloc_grid(int width, int height)
 {
-	int **arr , i = 0;
+	int **arr, i = 0, j = 0;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
-	arr = (int **) calloc(sizeof(int), height);
+	arr = (int **) malloc(sizeof(int) * height);
 	if (arr == NULL)
 		return (NULL);
 	for (; i < height; i++)
 	{
-		arr[i] = (int*) calloc(sizeof(int), width);
+		arr[i] = (int *) malloc(sizeof(int) * width);
 		if (arr[i] == NULL)
 			return (NULL);
+	}
+	for (i = 0; i < height; i++)
+	{
+		for (; j < width; j++)
+		{
+			arr[i][j] = 0;
+		}
 	}
 	return (arr);
 }
