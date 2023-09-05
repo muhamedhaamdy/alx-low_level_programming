@@ -8,16 +8,19 @@
  */
 char *_strdup(char *str)
 {
-	char *arr = malloc(1);
 	unsigned int i = 0;
 
-	do {
-		if (arr == NULL || str == NULL)
-			return ('\0');
+	while (str[i] != '\0')
+		i++;
+	char *arr = malloc(i);
+
+	i = 0;
+	if (arr == '\0' || str == '\0')
+		return ('\0');
+	while (str[i] != '\0')
+	{
 		arr[i] = str[i];
 		i++;
-		arr = (char *)realloc(arr, i);
-	} while (str[i] != '\0');
-	arr = (char *) realloc(arr, i - 1);
+	}
 	return (arr);
 }
