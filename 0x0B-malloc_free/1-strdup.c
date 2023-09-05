@@ -16,7 +16,7 @@ char *_strdup(char *str)
 			return ('\0');
 		arr[i] = str[i];
 		i++;
-		arr = (char *)realloc(arr, i + 1);
+		arr = (char *)realloc(arr, i);
 	} while (str[i] != '\0');
 	return (arr);
 }
