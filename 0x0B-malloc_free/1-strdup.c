@@ -18,5 +18,6 @@ char *_strdup(char *str)
 		i++;
 		arr = (char *)realloc(arr, i);
 	} while (str[i] != '\0');
+	arr = (char *) realloc(arr, i - 1);
 	return (arr);
 }
