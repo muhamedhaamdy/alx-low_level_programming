@@ -8,6 +8,8 @@
  */
 char *_strdup(char *str)
 {
+	if (str == NULL)
+		return (NULL);
 	unsigned int i = 0;
 	char *arr;
 
