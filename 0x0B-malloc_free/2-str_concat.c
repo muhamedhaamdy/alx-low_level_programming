@@ -1,6 +1,20 @@
 #include "main.h"
 #include <stdlib.h>
 /**
+ * empty_string- make an empty string
+ * Return: empty string
+*/
+char *empty_string()
+{
+	char *arr;
+
+	arr = (char *)malloc(1);
+	if (arr == NULL)
+		return (NULL);
+	arr[0] = '\0';
+	return (arr);
+}
+/**
  * str_concat - concatinate two strings
  *
  * @s1 : the first stirng
@@ -13,7 +27,7 @@ char *str_concat(char *s1, char *s2)
 	char *arr;
 
 	if (s1 == NULL && s2 == NULL)
-		return ("");
+		return (empty_string());
 	if (s1 != NULL)
 	{
 		while (s1[i] != '\0')
