@@ -13,18 +13,18 @@ int **alloc_grid(int width, int height)
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
-	arr = calloc(sizeof(int), height);
+	arr = calloc(sizeof(int), width);
 	if (arr == NULL)
 		return (NULL);
-	for (; i < height; i++)
+	for (; i < width;  i++)
 	{
-		arr[i] =  calloc(sizeof(int), width);
+		arr[i] =  calloc(sizeof(int), height);
 		if (arr[i] == NULL)
 			return (NULL);
 	}
-	for (i = 0; i < height; i++)
+	for (i = 0; i < width;  i++)
 	{
-		for (j = 0; j < width; j++)
+		for (j = 0; j < height; j++)
 		{
 			arr[i][j] = 0;
 		}
