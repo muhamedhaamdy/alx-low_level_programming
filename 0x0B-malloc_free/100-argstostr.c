@@ -13,7 +13,7 @@ char *argstostr(int ac, char **av)
 	char *arr;
 
 	arr = malloc(ac);
-	if (arr == NULL)
+	if (arr == NULL || ac == 0)
 		return (NULL);
 	for (i = 0; i < ac; i++)
 	{
