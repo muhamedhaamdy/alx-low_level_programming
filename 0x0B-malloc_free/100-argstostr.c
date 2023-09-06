@@ -12,7 +12,7 @@ char *argstostr(int ac, char **av)
 	int i, j, k = 0;
 	char *arr;
 
-	arr = malloc(ac);
+	arr =(char *)  malloc(sizeof(char) * ac);
 	if (arr == NULL || ac == 0)
 		return (NULL);
 	for (i = 0; i < ac; i++)
@@ -22,7 +22,7 @@ char *argstostr(int ac, char **av)
 			return (NULL);
 		while (av[i][j] != '\0')
 			j++;
-		arr = realloc(arr, j);
+		arr =(char *) realloc(arr,sizeof(char) *  j);
 		if (arr == NULL)
 			return (NULL);
 		j = 0;
