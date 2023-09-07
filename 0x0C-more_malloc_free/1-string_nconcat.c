@@ -23,7 +23,7 @@ int min(int a, int b)
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int i = 0, j = 0, sz1 = 0, sz2 = 0, mn;
+	int i = 0, j = 0, sz1 = 0, sz2 = 0;
 	char *s;
 
 	if (s1 != NULL)
@@ -36,7 +36,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		while (s2[sz2] != '\0')
 			sz2++;
 	}
-	mn = min(sz2, n);
 	if (s2 == NULL && s1 == NULL)
 	{
 		s = malloc(1);
@@ -48,14 +47,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	else if (s2 == NULL)
 		s = malloc(sz1);
 	else if (s1 == NULL)
-		s = malloc(mn);
+		s = malloc(min(sz2, n));
 	else
-		s = malloc(sz1 + mn);
+		s = malloc(sz1 + min(sz2, n));
 	if (s == NULL)
 		return (NULL);
 	for (; i < sz1; i++)
 		s[i] = s1[i];
-	for (; j < mn; j++, i++)
+	for (; j < min(sz2, n); j++, i++)
 		s[i] = s2[j];
 	s[i] = '\0';
 	return (s);
