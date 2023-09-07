@@ -39,6 +39,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 == NULL && s1 == NULL)
 	{
 		s = malloc(1);
+		if (s == NULL)
+			return (NULL);
 		s[0] = ' ';
 		return (s);
 	}
@@ -48,6 +50,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s = malloc(min(sz2, n) + 1);
 	else
 		s = malloc(sz1 + min(sz2, n) + 1);
+	if (s == NULL)
+		return (NULL);
 	for (; i < sz1; i++)
 		s[i] = s1[i];
 	for (; j < min(sz2, n); j++, i++)
