@@ -45,11 +45,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (s);
 	}
 	else if (s2 == NULL)
-		s = malloc(sz1);
+		s = malloc(sz1 + 1);
 	else if (s1 == NULL)
-		s = malloc(min(sz2, n));
+		s = malloc(min(sz2, n) + 1);
 	else
-		s = malloc(sz1 + min(sz2, n));
+		s = malloc(sz1 + min(sz2, n) + 1);
 	if (s == NULL)
 		return (NULL);
 	for (; i < sz1; i++)
