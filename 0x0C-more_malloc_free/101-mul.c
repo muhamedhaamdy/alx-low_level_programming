@@ -67,6 +67,6 @@ int main(int ac, char *av[])
 	}
 	for (; i >= 0; i--)
 		_putchar(ans[i] + '0');
-	putchar('\n');
+	_putchar('\n');
 	return (0);
 }
