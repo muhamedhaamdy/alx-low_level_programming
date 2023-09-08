@@ -8,7 +8,8 @@
 */
 int _strlen(char *s)
 {
-	int i = 0;
+	int i = 0, j;
+	char *err = "Error\n";
 
 	while (s[i] != '\0')
 	{
@@ -16,7 +17,8 @@ int _strlen(char *s)
 			i++;
 		else
 		{
-			printf("Error\n");
+			for (j = 0; err[j] != '\0'; j++)
+				_putchar(err[j]);
 			exit(98);
 		}
 
@@ -25,25 +27,31 @@ int _strlen(char *s)
 }
 /**
  * main - entry funciton
- * @ac - number of arguments
- * @av - array of arguments
+ * @ac : number of arguments
+ * @av : array of arguments
  * Return: always 0
- * */
+ */
 int main(int ac, char *av[])
 {
-	char ans[10000];
-	int l1, l2, i , j, tmp;
-	int a[500] , b[500];
+	char ans[10000], *err = "Error\n";
+	int l1, l2, i, j, tmp;
+	int a[500], b[500];
 
 	l1 = _strlen(av[1]);
 	l2 = _strlen(av[2]);
-	for (i = l1 - 1, j = 0; i >= 0; i-- , j++)
+	if (ac != 3)
+	{
+		for (j = 0; err[j] != '\0'; j++)
+			_putchar(err[j]);
+		exit(98);
+	}
+	for (i = l1 - 1, j = 0; i >= 0; i--, j++)
 		a[j] = av[1][i];
 	for (i = l2 - 1, j = 0; i >= 0; i--, j++)
 		b[j] = av[2][i];
 	for (i = 0; i < l2; i++)
 	{
-		for(j = 0; j < l1; j++)
+		for (j = 0; j < l1; j++)
 			ans[i + j] = b[i] * a[j];
 	}
 	for (i = 0; i < l1 + l2; i++)
@@ -58,27 +66,7 @@ int main(int ac, char *av[])
 			break;
 	}
 	for (; i >= 0; i--)
-		printf("%d", ans[i]);
+		_putchar(ans[i] + '0');
 	putchar('\n');
-
+	return (0);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
