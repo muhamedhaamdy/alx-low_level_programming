@@ -1,0 +1,84 @@
+#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+/**
+ * _strlen - get the lenght of the string
+ * @s : the string
+ * Return: the length of the string
+*/
+int _strlen(char *s)
+{
+	int i = 0;
+
+	while (s[i] != '\0')
+	{
+		if (s[i] >= '0' && s[i] <= '9')
+			i++;
+		else
+		{
+			printf("Error\n");
+			exit(98);
+		}
+
+	}
+	return (i);
+}
+/**
+ * main - entry funciton
+ * @ac - number of arguments
+ * @av - array of arguments
+ * Return: always 0
+ * */
+int main(int ac, char *av[])
+{
+	char ans[10000];
+	int l1, l2, i , j, tmp;
+	int a[500] , b[500];
+
+	l1 = _strlen(av[1]);
+	l2 = _strlen(av[2]);
+	for (i = l1 - 1, j = 0; i >= 0; i-- , j++)
+		a[j] = av[1][i];
+	for (i = l2 - 1, j = 0; i >= 0; i--, j++)
+		b[j] = av[2][i];
+	for (i = 0; i < l2; i++)
+	{
+		for(j = 0; j < l1; j++)
+			ans[i + j] = b[i] * a[j];
+	}
+	for (i = 0; i < l1 + l2; i++)
+	{
+		tmp = ans[i] / 10;
+		ans[i] %= 10;
+		ans[i + 1] += tmp;
+	}
+	for (i = l1 + l2; i >= 0; i--)
+	{
+		if (ans[i] > 0)
+			break;
+	}
+	for (; i >= 0; i--)
+		printf("%d", ans[i]);
+	putchar('\n');
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
