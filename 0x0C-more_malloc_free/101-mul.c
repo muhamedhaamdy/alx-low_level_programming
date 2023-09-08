@@ -23,7 +23,7 @@ int _strlen(char *s)
 		}
 
 	}
-	return (i - 1);
+	return (i);
 }
 /**
  * main - entry funciton
@@ -46,9 +46,9 @@ int main(int ac, char *av[])
 		exit(98);
 	}
 	for (i = l1 - 1, j = 0; i >= 0; i--, j++)
-		a[j] = av[1][i];
+		a[j] = av[1][i] - '0';
 	for (i = l2 - 1, j = 0; i >= 0; i--, j++)
-		b[j] = av[2][i];
+		b[j] = av[2][i] - '0';
 	for (i = 0; i < l2; i++)
 	{
 		for (j = 0; j < l1; j++)
