@@ -33,9 +33,9 @@ int _strlen(char *s)
  */
 int main(int ac, char *av[])
 {
-	char ans[100000], *err = "Error\n";
+	char ans[1000000], *err = "Error\n";
 	int l1, l2, i, j, tmp;
-	int a[1000], b[1000];
+	int a[10000], b[10000];
 
 	l1 = _strlen(av[1]);
 	l2 = _strlen(av[2]);
