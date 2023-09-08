@@ -35,7 +35,7 @@ int main(int ac, char *av[])
 {
 	char *err = "Error\n";
 	int l1, l2, i, j, tmp;
-	int a[10000], b[10000], ans[20000];
+	int a[10000], b[10000], ans[20000] = {0};
 
 	l1 = _strlen(av[1]);
 	l2 = _strlen(av[2]);
@@ -52,7 +52,7 @@ int main(int ac, char *av[])
 	for (i = 0; i < l2; i++)
 	{
 		for (j = 0; j < l1; j++)
-			ans[i + j] = b[i] * a[j];
+			ans[i + j] += b[i] * a[j];
 	}
 	for (i = 0; i < l1 + l2; i++)
 	{
