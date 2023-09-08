@@ -35,7 +35,7 @@ int main(int ac, char *av[])
 {
 	char *err = "Error\n";
 	int l1, l2, i, j, tmp;
-	int a[10000], b[10000], ans[20000] = {0};
+	int a[500], b[500], ans[1000] = {0};
 
 	l1 = _strlen(av[1]);
 	l2 = _strlen(av[2]);
