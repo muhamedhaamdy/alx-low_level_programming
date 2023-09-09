@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * _realloc -  function that reallocates a memory block 
+ * _realloc -  function that reallocates a memory block
  *
  * @ptr : the bolck u shall reserve
  * @old_size : the old size
@@ -11,7 +11,7 @@
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	void *p;
-	int i;
+	unsigned int i;
 
 	if (new_size == old_size)
 		return (ptr);
@@ -27,10 +27,14 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		free(ptr);
 		return (NULL);
 	}
-	p = malloc(newsize);
-	if (!p)
-		return (NULL);
-	for (i = 0; i < new_size && i < old_size; i++)
-		p[i] = ptr[i];
-	free(ptr);
+	if (new_size > old_size)
+	{
+		p = malloc(new_size);
+		if (!p)
+			return (NULL);
+		for (i = 0; i < new_size && i < old_size; i++)
+			*((char *)p + i) = *((char *)ptr + i);
+		free(ptr);
+	}
+	return (p);
 }	
