@@ -8,7 +8,7 @@
  *
  * Description: just a lone dog struct in a big kitty world
  */
-typedef struct dog
+struct dog
 {
 	char *name, *owner;
 	float age;
