@@ -24,7 +24,7 @@ int main(int ac, char *av[])
 	if (!tmp)
 	{
 		printf("Error\n");
-		exit(98);
+		exit(99);
 	}
 	result = tmp(a, b);
 	printf("%d\n", result);
