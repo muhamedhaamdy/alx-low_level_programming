@@ -10,12 +10,12 @@
 */
 int main(int ac, char *av[])
 {
-	int a , b, result;
+	int a, b, result;
 	int (*tmp)(int, int);
 
 	if (ac != 4)
-	{		
-	       printf("Error\n");
+	{
+		printf("Error\n");
 		exit(98);
 	}
 	a = atoi(av[1]);
