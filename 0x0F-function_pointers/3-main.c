@@ -8,9 +8,10 @@
  * @av : array of arguments
  * Return: always 0;
 */
-int main(int ac; char *av[])
+int main(int ac, char *av[])
 {
 	int a , b, result;
+	int (*tmp)(int, int);
 
 	if (ac != 4)
 	{		
@@ -19,6 +20,8 @@ int main(int ac; char *av[])
 	}
 	a = atoi(av[1]);
 	b = atoi(av[3]);
-	result = get_op_func(av[2]);
+	tmp = get_op_func(av[2]);
+	result = tmp(a, b);
 	printf("%d\n", result);
+	return (0);
 }
