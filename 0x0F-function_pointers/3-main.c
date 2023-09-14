@@ -21,6 +21,11 @@ int main(int ac, char *av[])
 	a = atoi(av[1]);
 	b = atoi(av[3]);
 	tmp = get_op_func(av[2]);
+	if (!tmp)
+	{
+		printf("Error\n");
+		exit(98);
+	}
 	result = tmp(a, b);
 	printf("%d\n", result);
 	return (0);
