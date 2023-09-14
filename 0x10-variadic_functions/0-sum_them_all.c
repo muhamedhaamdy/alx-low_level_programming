@@ -2,7 +2,7 @@
 #include <stdarg.h>
 /**
  * sum_them_all - sum all numbers
- * 
+ *
  * @n : number of integers
  * Return: summation
 */
