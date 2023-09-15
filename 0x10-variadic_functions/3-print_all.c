@@ -48,7 +48,8 @@ void print_all(const char * const format, ...)
 				printf("%f", va_arg(pt, double));
 				break;
 			default:
-				break;
+        i++;
+				continue;
 		}
 		i++;
 		if (next_valid((char *)format, i))
