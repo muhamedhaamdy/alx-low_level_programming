@@ -51,8 +51,8 @@ void print_all(const char * const format, ...)
 				break;
 		}
 		i++;
-		if (next_valid(format, i))
-			pirntf(", ");
+		if (next_valid((char *)format, i))
+			printf(", ");
 	}
 	printf("\n");
 }
