@@ -35,25 +35,25 @@ void print_all(const char * const format, ...)
 		switch (format[i])
 		{
 			case 'c':
-				printf("%c", va_arg(pt, int));
-				break;
+			printf("%c", va_arg(pt, int));
+			break;
 			case 'i':
-				printf("%d", va_arg(pt, int));
-				break;
+			printf("%d", va_arg(pt, int));
+			break;
 			case 's':
 				s = va_arg(pt, char *);
-				printf("%s", s ? s : "(nil)");
-				break;
+			printf("%s", s ? s : "(nil)");
+			break;
 			case 'f':
 				printf("%f", va_arg(pt, double));
-				break;
+			break;
 			default:
-        i++;
+				i++;
 				continue;
 		}
 		i++;
 		if (next_valid((char *)format, i))
-			printf(", ");
+		printf(", ");
 	}
 	printf("\n");
 }
