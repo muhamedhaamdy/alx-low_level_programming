@@ -17,17 +17,17 @@ void print_all(const char * const format, ...)
 	{
 		switch(format[i])
 		case 'c':
-			printf("%c", va_arg(pt, char);
+			printf(format[i+1]? "%c, ": "%c\n", va_arg(pt, char);
 			break;
 		case 'i':
-			printf("%d", va_arg(pt, int));
+			printf(format[i+1]? "%d, ": "%d\n", va_arg(pt, int));
 			break;
 		case 's':
 			s = va_arg(pt, char *);
-			printf("%s", s? s : "(nil)"));
+			printf(format[i+1]? "%s, ": "%s\n", s? s : "(nil)"));
 			break;
 		case 'f':
-			printf("%f", va_arg(pt, double));
+			printf(format[i+1]? "%f": "%f\n", va_arg(pt, double));
 			break;
 		default:
 			break;
