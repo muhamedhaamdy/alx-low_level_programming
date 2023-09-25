@@ -6,7 +6,6 @@
 */
 void free_listint(listint_t *head)
 {
-	listint_t *node = malloc(sizeof(listint_t));
 	listint_t *curr = head;
 
 	if (curr)
