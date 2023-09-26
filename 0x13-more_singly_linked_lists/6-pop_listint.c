@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stdlib.h>
 /**
  * pop_listint - delete the haed of the list
  * @head : the head of the list
