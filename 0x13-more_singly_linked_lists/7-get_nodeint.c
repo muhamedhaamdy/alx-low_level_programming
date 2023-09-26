@@ -2,6 +2,7 @@
 
 /**
  * get_nodeint_at_index - get the node at specific index
+ * @head : the head of the list
  * @index : the index
  * Return: the node
 */
