@@ -1,5 +1,5 @@
 #include "lists.h"
-
+#include <stdlib.h>
 /**
  * pop_listint - delete the haed of the list
  * @head : the head of the list
@@ -13,7 +13,7 @@ int pop_listint(listint_t **head)
 	if (!node || head)
 		return (0);
 	n = node->n;
-	free(*haed);
+	free(*head);
 	*head = node->next;
 	return (n);
 }
