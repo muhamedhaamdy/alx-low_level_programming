@@ -17,7 +17,7 @@ unsigned int binary_to_uint(const char *b)
 	{
 		if (b[i] == '0' || b[i] == '1')
 			i++;
-		else 
+		else
 			return (0);
 	}
 	i--;
@@ -28,4 +28,4 @@ unsigned int binary_to_uint(const char *b)
 		tmp *= 2;
 	}
 	return (num);
-}	
+}
