@@ -24,9 +24,17 @@ unsigned long int _pow(unsigned long int b)
 */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	if (index >= sizeof(n) * 8)
+	unsigned int size = sizeof(n) * 8, i, bit;
+	int tmp = i = size - 1;
+
+	if (index >= size)
 		return (-1);
 
-	*n -= _pow(index);
+	for (; tmp >= 0; tmp--, i--)
+	{
+		bit = (*n >> i) & 1;
+		if (index == i && bit)
+			*n -= _pow(index);
+	}
 	return (1);
 }
