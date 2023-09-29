@@ -9,11 +9,6 @@ void print_binary(unsigned long int n)
 {
 	int size = sizeof(n) * 8, i, bit;
 
-	if (n == 0)
-	{
-		_putchar('0');
-		return;
-	}
 	for (i = size - 1; i >= 0; i++)
 	{
 		bit = (n >> i) & 1;
