@@ -24,6 +24,9 @@ unsigned long int _pow(unsigned long int b)
 */
 int set_bit(unsigned long int *n, unsigned int index)
 {
+	if (index >= sizeof(n) * 8)
+		return (-1);
+
 	*n += _pow(index);
 	return (1);
 }
