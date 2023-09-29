@@ -15,13 +15,7 @@ int get_bit(unsigned long int n, unsigned int index)
 	for (; tmp >= 0; tmp--, i--)
 	{
 		bit = (n >> i) & 1;
-		if (!first && bit)
-		{
-			if (index == i)
-				return (bit);
-			first = 1;
-		}
-		else if (first && index == i)
+		if (index == i)
 			return (bit);
 	}
 	return (-1);
