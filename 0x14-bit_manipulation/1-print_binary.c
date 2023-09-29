@@ -7,11 +7,22 @@
 */
 void print_binary(unsigned long int n)
 {
-	int size = sizeof(n) * 8, i, bit;
+	int size = sizeof(n) * 8, i, bit, first = 0;
 
-	for (i = size - 1; i >= 0; i++)
+	if (n == 0)
+	{
+		putchar('0');
+		return;
+	}
+	for (i = size - 1; i >= 0; i--)
 	{
 		bit = (n >> i) & 1;
-			_putchar(bit + '0');
+		if (first == 0 && bit == 1)
+		{
+			putchar(bit + '0');
+			first = 1;
+		}
+		else if (first == 1)
+			putchar(bit + '0');
 	}
 }
