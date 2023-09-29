@@ -10,6 +10,7 @@
 unsigned long int _pow(unsigned long int b)
 {
 	unsigned long int a = 1;
+
 	while (b--)
 		a *= 2;
 	return (a);
