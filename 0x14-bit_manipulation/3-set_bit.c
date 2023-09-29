@@ -1,5 +1,13 @@
 #include "main.h"
 
+/**
+ * _pow - calculate the pow of a to b
+ *
+ * @a : the base
+ * @b : the power
+ * Return: the number after calculaton
+*/
+
 unsigned long int _pow(unsigned long int a, unsigned long int b)
 {
 	while (b--)
@@ -13,7 +21,8 @@ unsigned long int _pow(unsigned long int a, unsigned long int b)
  * @index: the index
  * Return: the bit
 */
-int set_bit(unsigned long int *n, unsigned int index){
+int set_bit(unsigned long int *n, unsigned int index)
+{
 	unsigned int size = sizeof(n) * 8, i, bit, sum = 0;
 	int tmp = i = size - 1, var = -1;
 
