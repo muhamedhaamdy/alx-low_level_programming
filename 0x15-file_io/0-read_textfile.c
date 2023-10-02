@@ -9,7 +9,8 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	FILE *filePtr = fopen(filename, "r");
-	int i = 0, ch;
+	size_t i = 0;
+	int ch;
 
 	if (!filePtr || !filename)
 		return (0);
