@@ -8,26 +8,16 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int filePtr = open(filename, O_RDONLY);
-	size_t i = 0;
-	ssize_t	bytes;
-	char buff[1024];
+	FILE *filePtr = fopen(filename, "r");
+	int i = 0, ch;
 
-	if (filePtr == -1 || !filename)
+	if (!filePtrf || !filename)
 		return (0);
-	bytes = read(filePtr, buff, sizeof(buff));
-	if (bytes == -1)
+	while ((ch = fgetc(filePtr)) != EOF)
 	{
-		close(filePtr);
-		return (0);
-	}
-	letters = ((size_t)bytes >= letters) ? letters : (size_t)bytes;
-	while (i < letters)
-	{
-		putchar(buff[i]);
+		putchar(ch);
 		i++;
 	}
-	if (close(filePtr) == -1)
-		return (0);
+	fclose(filePtr);
 	return (i);
 }
