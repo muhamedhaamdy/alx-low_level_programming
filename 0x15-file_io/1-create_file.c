@@ -1,25 +1,28 @@
 #include "main.h"
 /**
- * read_textfile - read the text file
+ * create_file - creat a text file
  *
  * @filename : the name of the file
- * @letters : number of letter in the file
- * Return: the acual number of letter that could read
+ * @text_content : a string that written to the file
+ * Return: 1 or -1
  */
 int create_file(const char *filename, char *text_content)
 {
-	int file_descriptor = open(filename, O_RDWR);
+	int filePtr = open(filename, O_RDWR);
 	size_t i = 0;
-	char ch;
+	ssize_t bytes;
 
-	if (file_descriptor == -1 || !filename)
-		return (0);
-	while (i < letters && read(file_descriptor, &ch, 1) == 1)
-	{
-		putchar(ch);
+	if (filePtr == -1 || !filename)
+		return (-1);
+	while (text_content[i])
 		i++;
+	bytes = write(filePtr, text_content, i);
+	if (bytes == -1)
+	{
+		close(filePtr);
+		return (-1);
 	}
-	if (close(file_descriptor) == -1)
-		return (0);
-	return (i);
+	if (close(filePtr) == -1)
+		return (-1);
+	return (1);
 }
