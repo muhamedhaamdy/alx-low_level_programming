@@ -8,23 +8,18 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	FILE *filePtr = fopen(filename, "r");
+	int file_descriptor = open(filename, O_RDONLY);
 	size_t i = 0;
-	ssize_t j = 0;
-	int ch;
+	char ch;
 
-	if (!filePtr || !filename)
-	{
-		if (filePtr)
-			fclose(filePtr);
+	if (file_descriptor == -1 || !filename)
 		return (0);
-	}
-	while ((ch = fgetc(filePtr)) != EOF && i < letters)
+	while (i < letters && read(file_descriptor, &ch, 1) == 1)
 	{
-		_putchar(ch);
+		putchar(ch);
 		i++;
-		j++;
 	}
-	fclose(filePtr);
-	return (j);
+	if (close(file_descriptor) == -1)
+		return (0);
+	return (i);
 }
