@@ -8,7 +8,7 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int filePtr = open(filename, O_RDWR);
+	int filePtr = open(filename, O_RDWR | O_CREAT, 0644);
 	size_t i = 0;
 	ssize_t bytes;
 
