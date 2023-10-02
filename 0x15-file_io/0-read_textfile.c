@@ -13,12 +13,19 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int ch;
 
 	if (!filePtr || !filename)
+	{
+		if (filePtr)
+			fclose(filePtr);
 		return (0);
+	}
 	while ((ch = fgetc(filePtr)) != EOF && i < letters)
 	{
-		putchar(ch);
+		_putchar(ch);
 		i++;
 	}
 	fclose(filePtr);
-	return (i);
+	if (i < letters)
+		return (0);
+	else
+		return (i);
 }
