@@ -24,8 +24,5 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		i++;
 	}
 	fclose(filePtr);
-	if (i < letters)
-		return (0);
-	else
-		return (i);
+	return (i);
 }
