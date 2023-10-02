@@ -10,7 +10,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int filePtr = open(filename, O_RDONLY);
 	size_t i = 0;
-        ssize_t	bytes;
+	ssize_t	bytes;
 	char buff[1024];
 
 	if (filePtr == -1 || !filename)
@@ -21,7 +21,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		close(filePtr);
 		return (0);
 	}
-	letters = ((size_t)bytes >= letters)? letters:(size_t)bytes;
+	letters = ((size_t)bytes >= letters) ? letters : (size_t)bytes;
 	while (i < letters)
 	{
 		putchar(buff[i]);
@@ -29,5 +29,5 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 	if (close(filePtr) == -1)
 		return (0);
-	return (letters);
+	return (i);
 }
