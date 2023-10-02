@@ -8,18 +8,26 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int file_descriptor = open(filename, O_RDONLY);
+	int filePtr = open(filename, O_RDONLY);
 	size_t i = 0;
-	char ch;
+        ssize_t	bytes;
+	char buff[1024];
 
-	if (file_descriptor == -1 || !filename)
+	if (filePtr == -1 || !filename)
 		return (0);
-	while (i < letters && read(file_descriptor, &ch, 1) == 1)
+	bytes = read(filePtr, buff, sizeof(buff));
+	if (bytes == -1)
 	{
-		putchar(ch);
+		close(filePtr);
+		return (0);
+	}
+	letters = ((size_t)bytes >= letters)? letters:(size_t)bytes;
+	while (i < letters)
+	{
+		putchar(buff[i]);
 		i++;
 	}
-	if (close(file_descriptor) == -1)
+	if (close(filePtr) == -1)
 		return (0);
-	return (i);
+	return (letters);
 }

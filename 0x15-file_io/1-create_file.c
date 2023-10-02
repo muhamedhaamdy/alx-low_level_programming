@@ -1,11 +1,25 @@
 #include "main.h"
 /**
- * creat_file - creat a text file
+ * read_textfile - read the text file
  *
  * @filename : the name of the file
- * @text_content : a string that to write into the file
- * Return: 1 or -1
+ * @letters : number of letter in the file
+ * Return: the acual number of letter that could read
  */
-int create_file(const char *filename, char *text_content){
-	
+int create_file(const char *filename, char *text_content)
+{
+	int file_descriptor = open(filename, O_RDWR);
+	size_t i = 0;
+	char ch;
+
+	if (file_descriptor == -1 || !filename)
+		return (0);
+	while (i < letters && read(file_descriptor, &ch, 1) == 1)
+	{
+		putchar(ch);
+		i++;
+	}
+	if (close(file_descriptor) == -1)
+		return (0);
+	return (i);
 }
