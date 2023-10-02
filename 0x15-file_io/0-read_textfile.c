@@ -9,13 +9,13 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	FILE *filePtr;
+	int filePtr;
 	size_t i = 0;
 	int ch;
 
 	if (!filename)
 		return (0);
-	filePtr = open(filename, O_RDONLY);
+	filePtr = fopen(filename, O_RDONLY);
 	if (filePtr == -1)
 		return (0);
 	while ((ch = fgetc(filePtr)) != EOF && i < letters)
