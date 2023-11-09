@@ -9,7 +9,7 @@
  */
 size_t print_dlistint(const dlistint_t *h)
 {
-	const dlistint_t *curr = malloc(sizeof(dlistint_t));
+	 dlistint_t *curr;
 	int c = 0;
 
 	curr = h;
