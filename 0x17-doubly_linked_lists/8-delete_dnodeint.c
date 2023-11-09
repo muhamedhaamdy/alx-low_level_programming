@@ -33,7 +33,10 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 				return (1);
 			}
 			else if (!curr->next && !curr->prev)
+			{
 				*head = NULL;
+				return (1);
+			}
 		}
 		curr = curr->next;
 		i++;
