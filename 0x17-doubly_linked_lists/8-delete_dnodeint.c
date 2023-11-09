@@ -3,7 +3,7 @@
  * delete_dnodeint_at_index - delete the node at specific index
  * @head : the head
  * @index : the index of the node
- * Retunr: 1 or -1
+ * Return: 1 or -1
 */
 
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
