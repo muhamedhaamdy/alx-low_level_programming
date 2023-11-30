@@ -1,12 +1,18 @@
-unsigned long int hash_djb2(const unsigned char *str)
-{
-    unsigned long int hash;
-    int c;
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include "hash_tables.h"
 
-    hash = 5381;
-    while ((c = *str++))
-    {
-        hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
-    }
-    return (hash);
+/**
+ * main - check the code for
+ *
+ * Return: Always EXIT_SUCCESS.
+ */
+int main(void)
+{
+    hash_table_t *ht;
+
+    ht = hash_table_create(1024);
+    printf("%p\n", (void *)ht);
+    return (EXIT_SUCCESS);
 }
