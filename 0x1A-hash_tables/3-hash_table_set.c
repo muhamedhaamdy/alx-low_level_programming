@@ -14,20 +14,25 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	int index = key_index((unsigned char *) key, ht->size);
 	hash_node_t *new_ht;
 
-	if (!value)
+	if (!value || !index)
 		return (0);
 	new_ht = malloc(sizeof(hash_node_t));
-	new_ht->key = (char *) key;
-	new_ht->value = (char *)value;
+	new_ht->key = malloc(strlen(key));
+	new_ht->value = malloc(strlen(value));
+	strcpy(new_ht->key, (char *)key);
+	strcpy(new_ht->value, (char *)value);
 	new_ht->next = NULL;
-	if (!index)
-		return (0);
 	if (!ht->array[index])
 		ht->array[index] = new_ht;
 	else
 	{
-		new_ht->next = ht->array[index];
-		ht->array[index] = new_ht;
+		if (!strcmp(ht->array[index]->key, key))
+			strcpy(ht->array[index]->value, value);
+		else
+		{
+			new_ht->next = ht->array[index];
+			ht->array[index] = new_ht;
+		}
 	}
 	return (1);
 }
