@@ -10,8 +10,11 @@ void hash_table_print(const hash_table_t *ht)
 {
 	hash_node_t *curr;
 	unsigned long int i = 0, len;
-	char *buff = malloc(1024);
+	char *buff;
 
+	if (!ht)
+		return;
+	buff = malloc(1024);
 	for (; i < 1024; i++)
 	{
 		buff[i] = '\0';
@@ -42,4 +45,5 @@ void hash_table_print(const hash_table_t *ht)
 			continue;
 		printf("%c", buff[i]);
 	}
+	free(buff);
 }
