@@ -1,18 +1,19 @@
 #include "hash_tables.h"
 
 /**
- * int hash_table_set - insera an element ot a hash table
+ *  hash_table_set - insera an element ot a hash table
  *
  * @ht : the hash table
  * @key : the key
  * @value : the value
- * Return: 1 or 0*/
+ * Return: 1 or 0
+ */
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *new_node, *curr;
 	int index;
-	
+
 	if (!ht || !value)
 		return (0);
 	index = key_index((const unsigned char *)key, ht->size);
