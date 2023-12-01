@@ -14,7 +14,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	int index = key_index((unsigned char *) key, ht->size);
 	hash_node_t *new_ht;
 
-	if (!value || !index)
+	if (!value || !index || !ht)
 		return (0);
 	new_ht = malloc(sizeof(hash_node_t));
 	if (!new_ht)
