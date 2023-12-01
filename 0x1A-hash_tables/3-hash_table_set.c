@@ -14,13 +14,24 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	int index = key_index((unsigned char *) key, ht->size);
 	hash_node_t *new_ht, *curr;
 
-	if (!value || !ht || !key)
+	if (!value || !ht)
 		return (0);
 	new_ht = malloc(sizeof(hash_node_t));
 	if (!new_ht)
 		return (0);
 	new_ht->key = strdup(key);
+	if (!new_ht->key)
+	{
+		free(new_ht);
+		return (0);
+	}
 	new_ht->value = strdup(value);
+	if (!new_ht->value)
+	{
+		free(new_ht->key);
+		free(new_ht);
+		return (0);
+	}
 	new_ht->next = NULL;
 	curr = ht->array[index];
 	if (curr)
