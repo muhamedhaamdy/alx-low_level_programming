@@ -16,20 +16,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (!value || !index)
 		return (0);
-	curr = ht->array[index];
-	while (curr)
-	{
-		if (!strcmp(curr->key, key))
-		{
-			free(curr->value);
-			curr->value = strdup(value);
-			if (!curr->value)
-				return (0);
-			return (1);
-		}
-		curr = curr->next;
-	}	
-
+	while (ht->array[index] != NULL) 
+		index = (index + 1) % ht->size;
+	
 	new_ht = malloc(sizeof(hash_node_t));
 	if (!new_ht)
 		return (0);
