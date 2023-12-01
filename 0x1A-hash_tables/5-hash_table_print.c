@@ -3,13 +3,13 @@
 /**
  * hash_table_print - print the whole hash table
  *
- * @ht - the hash table
+ * @ht : the hash table
 */
 
 void hash_table_print(const hash_table_t *ht)
 {
 	hash_node_t *curr;
-	long unsigned int i = 0, len;
+	unsigned long int i = 0, len;
 	char *buff = malloc(1024);
 
 	for (; i < 1024; i++)
@@ -27,7 +27,7 @@ void hash_table_print(const hash_table_t *ht)
 				strcat(buff, "'");
 				strcat(buff, curr->key);
 				strcat(buff, "': '");
-				strcat(buff, curr->value);	
+				strcat(buff, curr->value);
 				strcat(buff, "'");
 				strcat(buff, ", ");
 			}
@@ -38,7 +38,7 @@ void hash_table_print(const hash_table_t *ht)
 	len = strlen(buff);
 	for (i = 0; i < len; i++)
 	{
-		if((i == len - 4 || i == len - 3 ) && len > 3)
+		if ((i == len - 4 || i == len - 3) && len > 3)
 			continue;
 		printf("%c", buff[i]);
 	}
